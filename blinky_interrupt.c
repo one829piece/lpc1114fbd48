@@ -67,7 +67,7 @@ int main (void) {
   {
 #if TEST_TIMER_NUM
 	/* I/O configuration and LED setting pending. */
-	if ( (timer16_1_counter > 0) && (timer16_1_counter <= 500) )
+	if ( (timer16_1_counter > 0) && (timer16_1_counter <= 1000) )
 	{
 	  GPIOSetValue( 2, 7, 0 );
 	}
@@ -85,7 +85,7 @@ int main (void) {
 	{
 	  GPIOSetValue( 2, 7, 0 );
 	}
-	if ( (timer16_0_counter > 500) && (timer16_0_counter <= 1000) )
+	if ( (timer16_0_counter > 1000) && (timer16_0_counter <= 1250) )
 	{
 	  GPIOSetValue( 2, 7, 1 );
 	}
