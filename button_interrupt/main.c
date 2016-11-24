@@ -43,7 +43,9 @@ void init()
 		BUTTON_DIR;
 }
 void PIOINT2_IRQHandler(void)
-{  LPC_GPIO2->IEV |= (1<<6);
+{  
+	 LPC_GPIO2->IE &=~ (1<<6);
+	 LPC_GPIO2->IEV |= (1<<6);
    if((LPC_GPIO2->RIS&(1<<6))==(1<<6))
    {	
 		 delayMs(1,50);
@@ -76,6 +78,7 @@ void PIOINT2_IRQHandler(void)
       LPC_GPIO2->IC = 0XFFFF;
    }
 	 LPC_GPIO2->IEV &= ~(1<<6);
+	 LPC_GPIO2->IE |= (1<<6);
 }
 int main()
 {  init();
