@@ -1,6 +1,6 @@
 #include "LPC11XX.h"
 #include "blinky.h"
-#include "gpio.h"
+#include "setio.h"
 
 volatile uint32_t i = 0;
 
