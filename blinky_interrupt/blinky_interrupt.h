@@ -1,3 +1,5 @@
+#include "LPC11xx.h"     
+
 #ifndef __blinky_interrupt_H__
 #define __blinky_interrupt_H__
 

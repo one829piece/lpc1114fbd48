@@ -1,7 +1,6 @@
 #include "LPC11xx.h"                        /* LPC11xx definitions */
-#include "timer16.h"
-#include "clkconfig.h"
-#include "gpio.h"
+#include "timer.h"
+#include "setio.h"
 
 #define TEST_TIMER_NUM		0		/* 0 or 1 for 16-bit timers only */
 
@@ -12,11 +11,6 @@ void blink_interrupt(uint32_t portNum,uint32_t bitPosi,uint32_t on_time,uint32_t
 	uint32_t interval;
 
 	SystemInit();
-
-  /* Config CLKOUT, mostly used for debugging. */
-  CLKOUT_Setup( CLKOUTCLK_SRC_MAIN_CLK );
-  LPC_IOCON->PIO0_1 &= ~0x07;	
-  LPC_IOCON->PIO0_1 |= 0x01;		/* CLK OUT */
 
   /* Enable AHB clock to the GPIO domain. */
   LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
